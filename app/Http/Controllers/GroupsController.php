@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+
+class GroupsController extends Controller
+{
+    public function store(Request $request)
+    {
+        $this->validate($request , ['name'=> 'required|unique:groups']);
+        echo "1";
+    }
+}
