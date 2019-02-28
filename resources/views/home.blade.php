@@ -5,14 +5,13 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="jumbotron text-center">
-                <h1>Free Online Contact Manager</h1>
+                <h1>Hello , {{ Auth::user()->name }}</h1>
                 <p class="lead">
-                    Orgnize your contact freely and easily
+                    Welcome Back to Contact Manager App
                 </p>
 
                 <p>
-                    <a href="{{ route("contacts.index") }}" class="btn btn-primary btn-lg">contacts Page</a> or
-                    <a href="{{ url("/login") }}" class="btn btn-default btn-lg">Sign in</a>
+                    <a href="{{ route("contacts.index") }}" class="btn btn-primary btn-lg">Manage Your Contact</a>
                 </p>
             </div>
         </div>

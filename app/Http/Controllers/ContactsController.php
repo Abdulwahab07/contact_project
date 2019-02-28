@@ -61,6 +61,7 @@ class ContactsController extends Controller
 
     public function __construct()
     {
+       // $this->middleware('auth');
         $this->upload_dir = base_path().'/'.$this->upload_dir ;
     }
 
@@ -108,8 +109,10 @@ class ContactsController extends Controller
 
     public function create()
     {
-        $contact = new Contact();
-        return view("contacts.create" , compact('contact'));
+
+            $contact = new Contact();
+            return view("contacts.create" , compact('contact'));
+            
     }
 
     public function contacts(Request $request)

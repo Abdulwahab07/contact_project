@@ -8,7 +8,7 @@ class Contact extends Model
 {
     //
 
-    protected $fillable = ['name' , 'email' ,'address' , 'company' , 'phone' , 'group_id' , 'photo' ];
+    protected $fillable = ['name' , 'email' ,'address' , 'company' , 'phone' , 'group_id' , 'photo' , 'user_id'];
 
     public function group()
     {

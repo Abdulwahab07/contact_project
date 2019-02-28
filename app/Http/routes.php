@@ -12,7 +12,7 @@
 |
 */
 Route::get('/' , function (){
-    return view('welcom');
+    return view('welcome');
 });
 
 Route::post('groups/store' , ['uses' => 'GroupsController@store' , 'as' => 'groups.store']);
@@ -46,3 +46,7 @@ Route::get('/', function () {
 Route::resource('contacts', 'ContactsController');
 
 */
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

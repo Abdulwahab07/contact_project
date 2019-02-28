@@ -2,6 +2,20 @@
 
 @section('content')
     <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <div class="pull-left">
+                <h4>All Contacts</h4>
+            </div>
+            @if (!Auth::guest())
+            <div class="pull-right">
+                <a href="{{ route("contacts.create") }}" class="btn btn-success">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    Add Contact
+                </a>
+            </div>
+                @endif
+
+        </div>
       <table class="table">
 
           @foreach($contacts as $contact)
@@ -27,16 +41,18 @@
                 </div>
               </td>
               <td width="100" class="middle">
+                  @if (!Auth::guest())
                 <div>
                     {!! Form::open(['method' => 'DELETE', 'route' => ['contacts.destroy', $contact->id]]) !!}
                       <a href="{{ route("contacts.edit", ['id' => $contact->id]) }}" class="btn btn-circle btn-default btn-xs" title="Edit">
                         <i class="glyphicon glyphicon-edit"></i>
                       </a>
-                      <button onclick="return confirm('Are you sure?');" type="submit" class="btn btn-circle btn-danger btn-xs" title="Edit">
+                      <button onclick="return confirm('Are you sure?');" type="submit" class="btn btn-circle btn-danger btn-xs" title="Delete">
                         <i class="glyphicon glyphicon-remove"></i>
                       </button>
                     {!! Form::close() !!}
                 </div>
+                      @endif
               </td>
             </tr>
 
